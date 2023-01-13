@@ -10,7 +10,8 @@
     "build": "cd client && npm run build"
   },
   "dependencies": {
-    "apollo": "^2.11.1",
+    "apollo": "^2.34.0",
+    "apollo-client": "^2.6.10",
     "axios": "^1.2.2",
     "babel": "^6.23.0",
     "bootstrap": "^5.2.3",
@@ -18,7 +19,6 @@
     "eslint": "^8.31.0",
     "espn-fantasy-football-api": "^0.16.1",
     "fantasydata-node-client": "^1.5.3",
-    "hawk": "^0.10.2",
     "jest": "^29.3.1",
     "jquery": "^3.6.3",
     "jsdoc": "^4.0.0",
