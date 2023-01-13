@@ -58,7 +58,7 @@ function NavBar(props) {
                         <Nav.Item>
                         {Auth.loggedIn() && <li><a className={(pageSelected === 'Logout') ? 'current-navigation-link' : "navigation-link"} href='/' onClick={() => {
                          Auth.logout();
-                        setPageSelected('Community');
+                        setPageSelected('Home');
                         }} > Logout </a></li>}
                         </Nav.Item>                                         
                     </Nav>

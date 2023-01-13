@@ -6,12 +6,12 @@ import {
   incrementByAmount,
   incrementAsync,
   incrementIfOdd,
-  selectCount,
-} from '../../utils/slices/counterSlice';
-import styles from './Counter.module.css';
+  selectStats,
+} from '../../utils/slices/statsSlice';
+import styles from './Stats.module.css';
 
-export function Counter() {
-  const count = useSelector(selectCount);
+export function Stats() {
+  const count = useSelector(selectStats);
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState('2');
 

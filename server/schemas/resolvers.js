@@ -48,7 +48,7 @@ const resolvers = {
                 const players = await Players.create({playersTitle, playersText, createdBy:context.user.username}); 
                 let numberOfplayerss = await Players.collection.countDocuments();
                 if (numberOfplayerss > 5) {
-                    console.log(`there are now ${numberOfplayerss} players`);
+                    console.log(`there are now ${numberOfplayers} players`);
                     //This is where we can delete old playerss when new ones show up
                 }
                 return players;
@@ -72,13 +72,13 @@ const resolvers = {
             const user = await User.deleteOne({_id: _id});
             return user;
         },
-        addWatch: async(parent, {noteText}, context) => {
+        addWatch: async(parent, {watchText}, context) => {
             console.log('add Note');
             if (context.user) {
                 console.log(context.user);
                 const updatedUser = await User.findOneAndUpdate(
                     {_id: context.user._id},
-                    {$push: {notes: {noteText}}},
+                    {$push: {watchs: {watchText}}},
                     {new:true, runValidators:true}
                 );
                 return updatedUser;
@@ -123,7 +123,7 @@ const resolvers = {
     User: {
         playerss: async (root) => {
             try {
-                return await Search.find({createdBy:root.username});
+                return await Players.find({createdBy:root.username});
             }
             catch (error) {
                 throw new Error(error);

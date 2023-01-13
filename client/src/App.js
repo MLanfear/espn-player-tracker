@@ -5,12 +5,11 @@ import { setContext } from '@apollo/client/link/context'
 
 import Auth from './utils/auth'
 import Home from './components/HomePage/index';
-import { Players } from './components/stats/Players';
-import { Stats } from './components/stats/Stats';
+import { Players } from './components/Players';
+import { Stats } from './components/Stats';
 import { Analysis } from './components/Analysis';
 import { Search } from './components/Search';
 import { Signup } from './components/Signup';
-import { Stats } from './components/Stats';
 import { Login } from './components/Login';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';

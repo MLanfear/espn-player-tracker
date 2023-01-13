@@ -55,10 +55,10 @@ export function Players(props) {
     }
 
 
-    async function callApi(player) {
+    async function callApi(playerId) {
         $.ajax({
             method: 'GET',
-            url: 'https://api.api-ninjas.com/v1/exercises?muscle=' + player,
+            url: 'https://api.api-ninjas.com/v1/exercises?muscle=' + playerId,
             headers: {
                 'X-Api-Key': process.env.REACT_APP_API_KEY,
             },
@@ -73,7 +73,7 @@ export function Players(props) {
             
         });
         await addPlayers({
-            variables: playerInfo
+            variables: playerId
         });
 
     };
@@ -101,17 +101,17 @@ export function Players(props) {
             </Container>
             <Container className='player-card-container'>
                 <Row style={{justifyContent:'center', alignItems:'center'}}>
-                    {results && results.map((exercise) =>
+                    {results && results.map((playerId) =>
                         <Col className="player-cards" md={6}>
                             <Card border='dark' style={{height: '40rem', text: 'fit', text: 'black', overflow: 'auto' }} >
-                                <Card.Header className=''><b>{exercise.name}</b></Card.Header>
+                                <Card.Header className=''><b>{playerId.name}</b></Card.Header>
                                 <Card.Body className="card-body">
-                                    <Card.Text><b>Type:</b> {exercise.type} </Card.Text>
-                                    <Card.Text><b>Muscle Group:</b> {exercise.muscle}</Card.Text>
-                                    <Card.Text><b>Difficulty:</b> {exercise.difficulty}</Card.Text>
-                                    <Card.Text><b>Equipment:</b> {exercise.equipment}</Card.Text>
-                                    <Card.Text><b>Instructions:</b> {exercise.instructions}</Card.Text>
-                                    <Button variant="secondary" onClick={() => addToJournal(exercise.name)}>Add Exercise!</Button>
+                                    <Card.Text><b>Type:</b> {playerId.type} </Card.Text>
+                                    <Card.Text><b>Muscle Group:</b> {playerId.muscle}</Card.Text>
+                                    <Card.Text><b>Difficulty:</b> {playerId.difficulty}</Card.Text>
+                                    <Card.Text><b>Equipment:</b> {playerId.equipment}</Card.Text>
+                                    <Card.Text><b>Instructions:</b> {playerId.instructions}</Card.Text>
+                                    {/* <Button variant="secondary" onClick={() => addToJournal(playerId.name)}>Check Analysis!</Button> */}
                                 </Card.Body>
                             </Card>
                         </Col>

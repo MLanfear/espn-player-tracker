@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import "../style.css";
 import "../Login";
 import "../Signup";
@@ -17,7 +17,7 @@ const Home = (props) => {
                 <Row style={{ justifyContent: "center", paddingBottom: "30px", paddingTop: "60px" }}>
                     <Col md={12} className='landing-page-graphic'>
                         <Card className='bg-dark'>
-                            <Card.Img variant="top" src={globo} />
+                            {/* <Card.Img variant="top" src={globo} /> */}
                             <Card.Body>
                                 <Card.Text>
                                     {/* PLACEHOLDER FOR CARD TEXT */}

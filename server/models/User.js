@@ -18,7 +18,7 @@ const userSchema = new Schema(
             required: true,
             minlength: 8
         },
-        player: [playersSchema],
+        players: [playersSchema],
 
         watchs: [watchSchema]
 
